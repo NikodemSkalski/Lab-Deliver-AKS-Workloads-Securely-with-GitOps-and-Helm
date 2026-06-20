@@ -4,6 +4,12 @@ on:
     branches: [ main ]
     paths-ignore:
       - 'charts/simple-grocery-store/values/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: "staging"
 
 jobs:
   build-and-push:
